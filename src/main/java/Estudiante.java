@@ -13,15 +13,25 @@ public class Estudiante extends Persona{
     public void addMateria (Materia materia){
         this.materias.add(materia);
     }
-
-    public String getMateria(String key, List<Materia>materias) {
+    public String getNota(int key, List<Materia>materias) {
         String detalle = "";
         for (Materia materia:materias){
-            if (materia.getKey().equals(key)){
+           if (materia.getKey().equals(key)){
                 detalle = materia.getKey()+"\n"+materia.getNombre()+"\n"+materia.getNota();
                 break;
             }
         }
         return  detalle;
+
+    }
+    public int notaMinima(String key, int nota ,List<Materia>materias){
+        for(Materia materia:materias){
+            if(nota <=51){
+                System.out.println("Estas reprobado");
+            }else{
+                System.out.println("Estas aprobado");
+            }
+        }
+        return nota;
     }
 }
